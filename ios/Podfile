@@ -1,0 +1,28 @@
+platform :ios, '13.0'
+
+# Ignore all warnings from all pods
+inhibit_all_warnings!
+
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+
+  # Pods for Runner
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+
+  target 'RunnerTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
+  end
+end
