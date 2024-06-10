@@ -56,7 +56,7 @@ workflows:
         APP_ID: com.example.expense_app # <-- Put your APP ID here
       flutter: stable
       xcode: latest
-      cocoapods: 1.9.1
+      cocoapods: default
       node: 12.14.0
       npm: 6.13.7
       java: 11
